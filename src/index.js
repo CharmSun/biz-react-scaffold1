@@ -11,6 +11,7 @@ import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import rootReducer from './reducers';
 import rootSaga from './reducers';
+import Router from './router';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -25,7 +26,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
     <LocaleProvider locale={zhCN}>
-      <AppRouter />
+      <Router />
     </LocaleProvider>
   </Provider>,
   document.getElementById('app')
